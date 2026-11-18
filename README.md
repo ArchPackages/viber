@@ -31,6 +31,13 @@ published through the [ArchPackages pacman repository](https://archpackages.gith
 - Normalised the 0664/0775 file modes shipped inside the deb to 0644/0755.
 - Kept the small `/usr/bin/viber` wrapper that adds `/usr/lib/qt6/bin` to
   `PATH` so `xdg-mime` can find `qtpaths`.
+- Made the wrapper fall back to the bundled `xdgdesktopportal` platform theme
+  when Omarchy sets `QT_QPA_PLATFORMTHEME=qtengine`. Viber bundles Qt 6.11.3
+  and only loads plugins from `/opt/viber/plugins`, while Omarchy's `qtengine`
+  is built against the system Qt 6.12 and is rejected by the bundled runtime.
+  The portal theme gives Viber the same Open/Save dialog backend that
+  `qtengine` uses (`dialogTheme = "xdgdesktopportal"`), instead of Qt's
+  unthemed, non-native file dialog.
 
 ## Supply-chain verification
 

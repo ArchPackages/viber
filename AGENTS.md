@@ -33,6 +33,12 @@ Before importing an upstream update or pushing packaging changes:
   is intentional.
 - Bump `pkgrel` for every packaging change and regenerate `.SRCINFO` with
   `makepkg --printsrcinfo > .SRCINFO`.
+- Keep the `QT_QPA_PLATFORMTHEME=qtengine` fallback in `viber.sh.in`. Omarchy's
+  qtengine platform theme is built against the system Qt and cannot be loaded
+  by the Qt 6.11 runtime bundled in `/opt/viber`; without the fallback Viber
+  shows Qt's unthemed, non-native file dialogs. Do not replace the bundled Qt
+  with the system Qt: Viber uses `QHostInfo::clearHostInfoCache()`, which Qt
+  6.12 no longer exports.
 - Built packages are published through `ArchPackages/archrepo`. Keep its
   checkout step and build order in sync when the package name or dependencies
   change.

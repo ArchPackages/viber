@@ -4,4 +4,16 @@
 # /usr/bin/xdg-mime: line 885: qtpaths: command not found
 export PATH=/usr/lib/qt6/bin:$PATH
 
+# Viber bundles Qt 6.11.3 and only loads plugins from /opt/viber/plugins.
+# Omarchy's qtengine platform theme is built against the system Qt 6.12, so
+# the bundled runtime rejects it and Viber falls back to Qt's unthemed,
+# non-native file dialogs. Use the bundled portal theme instead: it delegates
+# Open/Save dialogs to xdg-desktop-portal, exactly like qtengine's
+# dialogTheme=xdgdesktopportal setting does for other Qt applications.
+case "${QT_QPA_PLATFORMTHEME:-qtengine}" in
+  qtengine|qtengine,*)
+    export QT_QPA_PLATFORMTHEME=xdgdesktopportal
+    ;;
+esac
+
 exec /opt/viber/Viber "$@"

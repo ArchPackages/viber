@@ -8,7 +8,7 @@
 
 pkgname=viber
 pkgver=29.4.0.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Free and secure calls and messages to anyone, anywhere, on any device and network, in any country!"
 arch=('x86_64')
 url='https://www.viber.com'
@@ -61,6 +61,8 @@ depends=(
 )
 optdepends=(
   'gtk3: GTK3 platform theme and native file dialogs'
+  'xdg-desktop-portal: Open/save dialogs through the desktop portal'
+  'xdg-desktop-portal-gtk: GTK file chooser backend for the portal'
   'xdg-utils: Open external links and attachments'
   'qt6-base: Provides qtpaths for xdg-mime file associations'
   'firefox: Open external links'
@@ -80,7 +82,7 @@ source=(
   'https://www.viber.com/app/uploads/Viber-Terms-of-Service-EN-March-2026.pdf'
 )
 b2sums=('2cb11c91f1bb15ea2708ca458b39f896876f3d8224590a6907a72f82edd5ffa3d4c51afe64383511d604f085caab5fa5bc0404cf42e7b6e4d828060358911db3'
-        '9ea86d0ccf308c5b14ff7096f4324d835603455e45befbab5c48eb055155f3dae18049906d580660d7c46423617931815846f4f3a43ddad3850687911da851ac'
+        '4573489bb58102dab38ead69feb8ee2ab8d51f1d4a423a4b44f638877c0fc594f77e8384e4a85426375757e0f34135db6621df230fb0bdbb4bc5c365670b3788'
         '7a935c23873efaf903fa686c74a5a9ade31c29c8dee54f4d8f98742ffd3624ff203bd681b7ae525b2118e74680edf471b9ac14ac6cd2b2f07b13dc5960600c92')
 
 prepare() {
