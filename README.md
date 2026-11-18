@@ -16,11 +16,8 @@ Originally packaged and maintained by **Sandor Nagy**, later maintained by
 **Morealaz**, **Lev Lybin** and **Özgür Sarıer**. Many thanks to them and to the
 Viber developers.
 
-This fork is maintained by **Miroslav Pavleski** <miroslav@pavleski.net>.
-
-This repository contains packaging only. Viber's end-user license prohibits
-redistributing the application, so built packages and the vendor binary are
-not published here; `makepkg` downloads the deb directly from Viber.
+This fork is maintained by **Miroslav Pavleski** <miroslav@pavleski.net> and is
+published through the [ArchPackages pacman repository](https://archpackages.github.io/archrepo/).
 
 ## Changes in this fork
 
@@ -67,13 +64,12 @@ The package is a proprietary, prebuilt x86_64 binary. Its source code cannot be
 audited; only the packaging and the vendor-provided artifact metadata can be
 verified.
 
-## Redistribution
+## License
 
-Viber's end-user license prohibits renting, leasing, lending, selling,
-redistributing or sublicensing the application. This repository therefore
-contains only the packaging and downloads the vendor deb at build time. Do not
-publish built `viber` packages or the contents of the deb to a public binary
-repository, mirror or release.
+Viber is proprietary software. The vendor deb is downloaded at build time from
+Viber's official CDN and the installed package carries the Viber Terms of
+Service PDF. Review Viber's terms before redistributing or using the
+application commercially.
 
 ## Build
 
