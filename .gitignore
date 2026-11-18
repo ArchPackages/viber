@@ -9,3 +9,5 @@
 !REUSE.toml
 !.nvchecker.toml
 !*.sh.in
+!README.md
+!AGENTS.md

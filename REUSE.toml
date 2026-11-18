@@ -4,6 +4,8 @@ version = 1
 path = [
     "PKGBUILD",
     "README.md",
+    "AGENTS.md",
+    "viber.sh.in",
     "keys/**",
     ".SRCINFO",
     ".nvchecker.toml",
