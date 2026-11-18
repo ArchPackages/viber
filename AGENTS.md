@@ -33,3 +33,6 @@ Before importing an upstream update or pushing packaging changes:
   is intentional.
 - Bump `pkgrel` for every packaging change and regenerate `.SRCINFO` with
   `makepkg --printsrcinfo > .SRCINFO`.
+- Do not publish built `viber` packages or the vendor deb to the ArchPackages
+  repository or anywhere else. Viber's EULA prohibits redistribution; only
+  the packaging may be hosted publicly.
